@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Counter | Kodai Utsunomiya</title>
-    <meta name="description" content="広告なし・完全無料で使えるシンプルな文字数カウントツール。">
+    <meta name="description" content="広告なし・完全無料で使えるシンプルな文字数カウントツール">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
     
     <style>
         /* =========================================
-           1. Base Variables & Reset (ポートフォリオと統一)
+           1. Base Variables & Reset
            ========================================= */
         :root {
             --primary-color: #2c3e50;    /* Deep Navy */
@@ -254,11 +254,10 @@
 
     <header>
         <div class="container header-container">
-            <div class="logo"><a href="#">Kodai Utsunomiya</a></div>
+            <div class="logo"><a href="https://kodai-utsunomiya.vercel.app/">Kodai Utsunomiya</a></div>
             <nav>
                 <ul class="nav-list">
-                    <!-- メインサイトへのリンク（必要に応じてURLを変更してください） -->
-                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="https://kodai-utsunomiya.vercel.app/"><i class="fas fa-home"></i> Home</a></li>
                     <li>
                         <button id="theme-toggle" aria-label="Toggle Dark Mode">
                             <i class="fas fa-moon"></i>
@@ -279,11 +278,11 @@
             </h2>
             
             <p style="margin-bottom: 20px; font-size: 0.95rem; color: #666;">
-                入力データはブラウザ上で処理され、外部に送信されることはありません。
+                入力データはブラウザ上で処理され，外部に送信されることはありません．
             </p>
 
             <div class="textarea-wrapper">
-                <textarea id="inputText" rows="10" placeholder="ここにテキストを入力または貼り付けてください..."></textarea>
+                <textarea id="inputText" rows="10" placeholder="ここにテキストを入力または貼り付け..."></textarea>
             </div>
 
             <div class="controls">
@@ -352,7 +351,7 @@
 
     <script>
         // ==========================================
-        // 1. テーマ切り替えロジック (ポートフォリオと共通)
+        // 1. テーマ切り替えロジック
         // ==========================================
         const toggleButton = document.getElementById('theme-toggle');
         const icon = toggleButton.querySelector('i');
@@ -391,14 +390,14 @@
             const text = document.getElementById('inputText').value;
             const normalizedText = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
             
-            // サロゲートペア（絵文字など）を考慮した文字配列化
+            // サロゲートペア (絵文字など) を考慮した文字配列化
             const chars = [...normalizedText];
             
             const totalCount = chars.length;
             const textWithoutCr = normalizedText.replace(/\n/g, '');
             const withoutCrCount = [...textWithoutCr].length;
             
-            // 全角・半角スペース、タブ、改行を除外
+            // 全角・半角スペース，タブ，改行を除外
             const textWithoutCrSpace = normalizedText.replace(/[\n\s\t　]/g, '');
             const withoutCrSpaceCount = [...textWithoutCrSpace].length;
             
@@ -459,7 +458,7 @@
                     btn.innerHTML = originalHTML;
                 }, 2000);
             }).catch(err => {
-                alert('コピーに失敗しました。');
+                alert('コピーに失敗');
             });
         });
 
